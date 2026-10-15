@@ -317,7 +317,7 @@ Performance indexes on: `subjects(semester_id)`, `subjects(category_id)`, `sylla
 |---|---|---|
 | Remote URL | **Connected** | `https://github.com/darshil158/StudyVerse.git` |
 | Default Branch | `main` | Tracks `origin/main` |
-| Working Tree | Clean | Synced at commit `0cc57cd` ("feat: initial release of StudyVerse - GTU Academic Universe") |
+| Working Tree | Clean | Synced at commit `fbc851f` ("style: restructure and align all cards with balanced typography, icons, and buttons") |
 | Connected Platforms | **Verified** | Linked directly to Vercel, Render, and Supabase |
 | CI/CD Workflows | None | No `.github/workflows/` configured; builds are handled natively by Vercel & Render webhooks |
 
@@ -327,17 +327,17 @@ Performance indexes on: `subjects(semester_id)`, `subjects(category_id)`, `sylla
 | Project & Team | **Connected** | Project `studyverse` under account `animelover` (Hobby) |
 | Deployment Status | **Deployed & Ready** | Production deployment `studyverse-3p6i4m7bo-animelover.vercel.app` |
 | Primary Custom Domain | **Live** | `https://studyverse-bay.vercel.app` |
-| Trigger & Commit | Synced | Deployed from `main` branch @ commit `0cc57cd` by `darshil158` |
+| Trigger & Commit | Synced | Deploys automatically from `main` branch upon push |
 | Configuration File | Configured | `vercel.json` provides SPA fallback routing (`/*` -> `/index.html`) |
-| Observability | Active | Telemetry active with 13+ CDN requests recorded |
-| Note / Discrepancy | Warning | `index.html` meta `og:url` specifies `studyverse-gtu.vercel.app` instead of live `studyverse-bay.vercel.app` |
+| Observability | Active | Telemetry active with CDN requests recorded |
+| OG Meta URL | **Resolved** | `index.html` updated to match live `https://studyverse-bay.vercel.app/` |
 
 ### 10.3 Render (Production Frontend 2)
 | Aspect | Status | Detail |
 |---|---|---|
 | Service Type | Static Site | Service ID: `srv-dat72d8473hc73f0rb70` in workspace `My Workspace / Production` |
 | Deployment Status | **Deployed & Live** | `https://studyverse-e8za.onrender.com` |
-| Source & Trigger | Synced | Auto-deploys from GitHub `darshil158/StudyVerse` on branch `main` @ commit `0cc57cd` |
+| Source & Trigger | Synced | Auto-deploys from GitHub `darshil158/StudyVerse` on branch `main` |
 | Environment Variables | **Configured** | `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` injected in Render dashboard |
 | Fallback Routing | To Verify | Ensure rewrite rule (`/* -> /index.html`) is set in Render Redirects/Rewrites for SPA routing |
 
