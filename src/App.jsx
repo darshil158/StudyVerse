@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, useLocation } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Layout from './components/layout/Layout.jsx';
 import AppRoutes from './routes/AppRoutes.jsx';
 import { ToastProvider } from './hooks/useToast.jsx';
@@ -23,6 +24,7 @@ export default function App() {
         <Layout>
           <AppRoutes />
         </Layout>
+        <Analytics />
       </ToastProvider>
     </BrowserRouter>
   );
