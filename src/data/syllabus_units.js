@@ -39,7 +39,7 @@ const SPECIFIC_SYLLABUS = {
       topics: ['File Concept, Access Methods, Directory Structures', 'File-System Mounting, File Sharing, and Protection', 'File System Implementation, Allocation Methods (Contiguous, Linked, Indexed)', 'Free-Space Management (Bit Vector, Linked List)', 'Disk Structure, Disk Scheduling (FCFS, SSTF, SCAN, C-SCAN), RAID levels']
     }
   ],
-  'sub-3140701': [ // Design and Analysis of Algorithms
+  'sub-3150703': [ // Analysis and Design of Algorithms (ADA)
     {
       unitNumber: 1,
       title: 'Algorithm Analysis & Mathematical Foundations',
@@ -118,82 +118,118 @@ const SPECIFIC_SYLLABUS = {
       unitNumber: 1,
       title: 'Database Architecture & ER Modeling',
       hours: 8,
-      weightage: 18,
-      topics: ['Database System vs File System, Data Independence', 'Three-Schema Architecture and Data Models', 'Entity, Attributes, Entity Sets, Relationship Sets, Degree and Cardinality', 'Entity-Relationship (ER) Diagrams and Enhanced ER (EER) modeling', 'Mapping ER Diagrams to Relational Tables']
+      weightage: 20,
+      topics: ['Purpose of Database Systems vs File Systems', 'View of Data: Data Abstraction, Instances and Schemas', 'Three-Schema Architecture and Data Independence', 'Data Models: Relational, Network, Hierarchical, Object-Oriented', 'Entity-Relationship (ER) Modeling: Entities, Attributes, Relationships, Keys', 'Extended ER (EER) Features: Specialization, Generalization, Aggregation']
     },
     {
       unitNumber: 2,
-      title: 'Relational Model & Relational Algebra',
-      hours: 8,
-      weightage: 18,
-      topics: ['Relational Model Concepts, Keys (Primary, Candidate, Foreign, Super Key)', 'Integrity Constraints: Domain, Entity Integrity, Referential Integrity', 'Fundamental Relational Algebra Operations: Select, Project, Union, Set Difference, Cartesian Product, Rename', 'Additional Operations: Set Intersection, Natural Join, Outer Joins, Division', 'Tuple Relational Calculus and Domain Relational Calculus']
+      title: 'Relational Model, Formal Languages & SQL',
+      hours: 10,
+      weightage: 24,
+      topics: ['Relational Model Concepts: Domains, Tuples, Relations, Integrity Constraints', 'Relational Algebra: Select, Project, Rename, Cartesian Product, Join, Division', 'Tuple Relational Calculus and Domain Relational Calculus', 'SQL DDL, DML, DCL, and TCL commands', 'Complex SQL Queries: Nested Subqueries, Correlated Queries, Aggregate Functions', 'Views, Triggers, Assertions, and Stored Procedures in SQL']
     },
     {
       unitNumber: 3,
-      title: 'Structured Query Language (SQL)',
+      title: 'Relational Database Design & Normalization',
       hours: 10,
       weightage: 24,
-      topics: ['Data Definition Language (DDL): CREATE, ALTER, DROP, TRUNCATE', 'Data Manipulation Language (DML): INSERT, UPDATE, DELETE, SELECT', 'Aggregate Functions (COUNT, SUM, AVG, MIN, MAX) and GROUP BY / HAVING', 'Complex Joins (INNER, LEFT, RIGHT, FULL OUTER, CROSS)', 'Nested Subqueries and Correlated Subqueries', 'Views, Indexes, Sequences, and SQL Triggers']
+      topics: ['Informal Design Guidelines for Relation Schemas', 'Functional Dependencies (FDs): Definition, Trivial vs Non-trivial', 'Armstrong’s Axioms and Closure of Attribute Sets', 'Lossless-Join Decomposition and Dependency Preservation', 'Normal Forms based on Primary Keys: 1NF, 2NF, 3NF', 'Boyce-Codd Normal Form (BCNF) and multi-valued dependencies (4NF)']
     },
     {
       unitNumber: 4,
-      title: 'Relational Database Design & Normalization',
+      title: 'Transaction Processing & Concurrency Control',
       hours: 10,
-      weightage: 22,
-      topics: ['Pitfalls in Relational Database Design and Redundancy', 'Functional Dependencies (FD), Closure of FDs and Attribute Closure', 'Armstrong’s Axioms for Functional Dependencies', 'Canonical Cover and Minimal Cover of FDs', 'Normal Forms: First Normal Form (1NF), 2NF, 3NF, and Boyce-Codd Normal Form (BCNF)', 'Lossless-Join Decomposition and Dependency Preservation']
+      weightage: 20,
+      topics: ['Transaction Concept and ACID Properties', 'Transaction States and Concurrent Executions', 'Serializability: Conflict Serializability and View Serializability', 'Testing for Serializability: Precedence Graphs', 'Concurrency Control Protocols: Lock-Based Protocols, Two-Phase Locking (2PL)', 'Deadlock Handling: Wait-Die, Wound-Wait, Detection and Recovery']
     },
     {
       unitNumber: 5,
-      title: 'Transactions, Concurrency Control & Recovery',
-      hours: 8,
-      weightage: 18,
-      topics: ['Transaction Concept, State Diagram, and ACID Properties', 'Concurrent Executions and Serializability (Conflict & View Serializability)', 'Recoverability: Recoverable and Cascadeless Schedules', 'Concurrency Control Protocols: Lock-Based Protocols (2-Phase Locking Protocol)', 'Deadlock Handling: Wait-Die, Wound-Wait, Detection & Recovery', 'Log-Based Recovery: Immediate and Deferred Database Modification, Checkpoints']
+      title: 'Storage, Indexing & Query Processing',
+      hours: 6,
+      weightage: 12,
+      topics: ['File Organization: Heap, Sorted, Hashed file organizations', 'Indexing Concepts: Dense, Sparse, Primary, Secondary, Clustering Indexes', 'Tree-Structured Indexing: B-Trees and B+ Trees structures and search', 'Query Processing Steps: Parsing, Optimization, and Evaluation', 'Database Recovery Techniques: Immediate and Deferred update']
     }
   ],
   'sub-3150710': [ // Computer Networks
     {
       unitNumber: 1,
-      title: 'Physical Layer & Network Models',
+      title: 'Physical & Data Link Layers',
       hours: 8,
-      weightage: 18,
-      topics: ['Data Communication Components, Topologies (Mesh, Star, Bus, Ring)', 'Transmission Media: Twisted Pair, Coaxial Cable, Fiber Optics, Wireless', 'OSI Reference Model (7 Layers) and Functions of Each Layer', 'TCP/IP Protocol Suite (4 Layers) and Comparison with OSI', 'Physical Layer Switching: Packet Switching vs Circuit Switching']
+      weightage: 20,
+      topics: ['Network hardware, topologies, OSI and TCP/IP reference models', 'Transmission media: Guided and unguided media characteristics', 'Framing methods, Error detection and correction (Parity, CRC, Hamming code)', 'Elementary data link protocols: Simplex, Stop-and-Wait', 'Sliding window protocols: Go-Back-N, Selective Repeat']
     },
     {
       unitNumber: 2,
-      title: 'Data Link Layer & MAC Sublayer',
-      hours: 10,
-      weightage: 22,
-      topics: ['Data Link Layer Design Issues, Framing Methods (Character/Bit Stuffing)', 'Error Detection and Correction: Parity, Checksum, and Cyclic Redundancy Check (CRC)', 'Elementary Data Link Protocols: Simplex, Stop-and-Wait', 'Sliding Window Protocols: Go-Back-N and Selective Repeat ARQ', 'Medium Access Control (MAC): Pure ALOHA, Slotted ALOHA, CSMA, CSMA/CD, CSMA/CA', 'IEEE 802.3 Ethernet Standards and Frame Format']
+      title: 'Medium Access Sublayer & Local Area Networks',
+      hours: 8,
+      weightage: 20,
+      topics: ['Channel allocation problem, Multiple access protocols: ALOHA, CSMA, CSMA/CD', 'Collision-free protocols and limited contention protocols', 'Ethernet: Standard Ethernet, Fast Ethernet, Gigabit Ethernet cabling', 'Wireless LANs: IEEE 802.11 architecture, MAC sublayer, frame structure', 'Data link layer switching: Bridges, Spanning Tree Protocol, VLANs']
     },
     {
       unitNumber: 3,
       title: 'Network Layer & Routing Protocols',
       hours: 10,
-      weightage: 24,
-      topics: ['IPv4 Addressing: Classful Addressing and Classless Inter-Domain Routing (CIDR)', 'Subnetting, Supernetting, and Subnet Mask Calculations', 'IPv4 Header Format, Fragmentation, and Reassembly', 'Address Resolution Protocol (ARP) and Dynamic Host Configuration Protocol (DHCP)', 'Routing Algorithms: Distance Vector (Bellman-Ford) and Count-to-Infinity Problem', 'Link State Routing (Dijkstra) and OSPF, BGP routing concepts', 'IPv6 Addressing, Header format, and Transition from IPv4']
+      weightage: 25,
+      topics: ['Network layer design issues, Virtual circuits and Datagram subnets', 'Routing algorithms: Shortest Path, Flooding, Distance Vector (RIP), Link State (OSPF)', 'Congestion control algorithms: Token Bucket and Leaky Bucket algorithms', 'IPv4 Addressing, Subnetting, Supernetting, CIDR prefix matching', 'Internet Protocol IPv4 header format, IPv6 advantages and format, NAT']
     },
     {
       unitNumber: 4,
-      title: 'Transport Layer Protocols',
-      hours: 8,
-      weightage: 20,
-      topics: ['Transport Layer Services, Port Numbers, Socket Addressing', 'User Datagram Protocol (UDP): Datagram format and applications', 'Transmission Control Protocol (TCP): Segment Header and Connection Management (3-Way Handshake)', 'TCP Reliable Data Transfer, Sequence & Acknowledgment numbering', 'TCP Flow Control (Sliding Window) and Silly Window Syndrome', 'TCP Congestion Control: Slow Start, Congestion Avoidance, Fast Retransmit, Fast Recovery']
+      title: 'Transport Layer Protocols & Congestion Management',
+      hours: 10,
+      weightage: 23,
+      topics: ['Transport service primitives, Sockets and port numbers', 'User Datagram Protocol (UDP): Segment structure and applications', 'Transmission Control Protocol (TCP): Connection establishment (3-way handshake)', 'TCP Connection release, TCP transmission policy, TCP timer management', 'TCP Congestion Control: AIMD, Slow Start, Congestion Avoidance, Fast Retransmit']
     },
     {
       unitNumber: 5,
-      title: 'Application Layer & Network Security',
+      title: 'Application Layer Services & Network Security',
       hours: 6,
-      weightage: 16,
-      topics: ['Domain Name System (DNS): Hierarchical Name Space, DNS Records, and Resolution', 'Hypertext Transfer Protocol: HTTP/1.1, HTTP/2, Persistent Connections, and HTTPS', 'File Transfer Protocol (FTP) and Email Protocols (SMTP, POP3, IMAP)', 'Basics of Cryptography: Symmetric vs Asymmetric encryption', 'Firewalls: Packet Filters, Stateful Inspection, and Application Gateways']
+      weightage: 12,
+      topics: ['Domain Name System (DNS): Hierarchical namespace, Resource records, Resolvers', 'Hypertext Transfer Protocol: HTTP/1.1 vs HTTP/2, Persistent connections, Cookies', 'Electronic Mail: SMTP, POP3, IMAP, MIME message format', 'File Transfer Protocol (FTP) control and data connections', 'Network Security basics: Firewalls, Symmetric vs Asymmetric cryptography, SSL/TLS']
+    }
+  ],
+  'sub-3160704': [ // Theory of Computation
+    {
+      unitNumber: 1,
+      title: 'Automata Theory & Regular Languages',
+      hours: 8,
+      weightage: 22,
+      topics: ['Alphabets, strings, languages, operations on languages', 'Deterministic Finite Automata (DFA): Formal definition, transition graphs', 'Non-Deterministic Finite Automata (NFA), NFA with epsilon transitions', 'Equivalence of NFA and DFA, Subset construction algorithm', 'Minimization of DFA: Table-filling algorithm and equivalence partitioning']
+    },
+    {
+      unitNumber: 2,
+      title: 'Regular Expressions & Pumping Lemma',
+      hours: 8,
+      weightage: 20,
+      topics: ['Regular expressions operators and identities, Arden’s Theorem', 'Equivalence of regular expressions and finite automata', 'Pumping Lemma for regular languages and proof of non-regularity', 'Closure properties of regular languages (Union, Intersection, Complement)', 'Decision properties of regular languages']
+    },
+    {
+      unitNumber: 3,
+      title: 'Context-Free Grammars & Pushdown Automata',
+      hours: 10,
+      weightage: 24,
+      topics: ['Context-Free Grammars (CFG) definition, derivations, parse trees', 'Ambiguity in grammars and elimination of ambiguity', 'Simplification of CFG: Eliminating useless symbols, unit, and null productions', 'Normal Forms: Chomsky Normal Form (CNF) and Greibach Normal Form (GNF)', 'Pushdown Automata (PDA): Formal definition, acceptance by final state and empty stack', 'Equivalence of PDA and CFG, Deterministic Pushdown Automata (DPDA)']
+    },
+    {
+      unitNumber: 4,
+      title: 'Context-Free Languages & Turing Machines',
+      hours: 10,
+      weightage: 22,
+      topics: ['Pumping Lemma for Context-Free Languages and applications', 'Closure properties of context-free languages', 'Turing Machine (TM) model, formal definition, instantaneous descriptions', 'Design of Turing Machines for language recognition and function computation', 'Modifications of Turing Machines: Multi-tape, Non-deterministic TM']
+    },
+    {
+      unitNumber: 5,
+      title: 'Chomsky Hierarchy & Computability',
+      hours: 6,
+      weightage: 12,
+      topics: ['Chomsky Hierarchy: Regular, CFL, Context-Sensitive, and Recursively Enumerable', 'Universal Turing Machine concept', 'Decidability and Undecidability: Halting Problem of Turing Machines', 'Post Correspondence Problem (PCP)', 'Reducibility and Rice’s Theorem overview']
     }
   ]
 };
 
-// Generate standard rich 4-5 units for all 48 subjects
 export const SYLLABUS_UNITS = SUBJECTS.flatMap((subject) => {
   if (SPECIFIC_SYLLABUS[subject.id]) {
-    return SPECIFIC_SYLLABUS[subject.id].map((unit, idx) => ({
-      id: `syl-${subject.code}-${idx + 1}`,
+    return SPECIFIC_SYLLABUS[subject.id].map((unit) => ({
+      id: `syl-${subject.code}-${unit.unitNumber}`,
       subjectId: subject.id,
       unitNumber: unit.unitNumber,
       title: unit.title,
