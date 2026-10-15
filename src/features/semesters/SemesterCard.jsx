@@ -86,17 +86,18 @@ export default function SemesterCard({ semester }) {
           style={{ backgroundColor: semColor.hex }}
         />
 
-        {/* Big Roman Numeral Parallax Watermark */}
+        {/* Big Roman Numeral Parallax Watermark - placed top right so it never overlaps footer */}
         <div 
-          className="absolute -bottom-4 right-4 text-8xl font-display font-extrabold text-white/[0.03] group-hover:text-white/[0.06] select-none pointer-events-none transition-colors duration-500"
+          className="absolute top-12 right-4 text-7xl sm:text-8xl font-display font-extrabold text-white/[0.03] group-hover:text-white/[0.06] select-none pointer-events-none transition-colors duration-500"
           style={{ transform: 'translateZ(10px)' }}
+          aria-hidden="true"
         >
           {semester.roman}
         </div>
 
         {/* Card Header Layer */}
-        <div className="relative z-10 space-y-4" style={{ transform: 'translateZ(20px)' }}>
-          <div className="flex items-center justify-between">
+        <div className="relative z-10 space-y-3" style={{ transform: 'translateZ(20px)' }}>
+          <div className="flex items-center justify-between gap-3">
             <span
               className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold tracking-wider uppercase border backdrop-blur-sm"
               style={{
@@ -106,7 +107,7 @@ export default function SemesterCard({ semester }) {
                 boxShadow: `0 0 12px ${semColor.glow}`
               }}
             >
-              <Sparkles size={12} />
+              <Sparkles size={12} className="shrink-0" />
               <span>Orbit {semester.number}</span>
             </span>
 
@@ -115,56 +116,60 @@ export default function SemesterCard({ semester }) {
               semNumber={semester.number}
               availableCount={18}
               totalPossible={20}
-              size={52}
+              size={46}
               strokeWidth={3}
             />
           </div>
 
           <div>
-            <h3 className="font-display text-2xl font-bold text-white tracking-tight group-hover:text-cyan-200 transition-colors">
+            <h3 className="font-display text-xl sm:text-2xl font-bold text-white tracking-tight group-hover:text-cyan-200 transition-colors">
               {semester.title}
             </h3>
-            <p className="text-xs font-mono text-space-text-muted mt-1 uppercase tracking-wider">
+            <p className="text-[11px] font-mono text-cyan-300/80 mt-1 uppercase tracking-wider font-medium">
               {semester.subtitle}
             </p>
           </div>
 
-          <p className="text-xs text-space-text-secondary leading-relaxed line-clamp-2">
+          <p className="text-xs text-space-text-secondary leading-relaxed line-clamp-2 min-h-[34px]">
             {semester.description}
           </p>
         </div>
 
         {/* Highlights List Layer */}
-        <div className="relative z-10 my-4 space-y-1.5 border-t border-white/5 pt-4" style={{ transform: 'translateZ(15px)' }}>
-          <div className="text-[11px] font-mono text-space-text-muted uppercase tracking-wider mb-2 flex items-center gap-1">
-            <BookOpen size={11} className="text-cyan-400" />
+        <div className="relative z-10 my-3.5 space-y-2 border-t border-white/5 pt-3.5" style={{ transform: 'translateZ(15px)' }}>
+          <div className="text-[10px] font-mono text-space-text-muted uppercase tracking-wider flex items-center gap-1.5">
+            <BookOpen size={11} className="text-cyan-400 shrink-0" />
             <span>Key Curriculum Moons</span>
           </div>
-          {semester.highlights?.slice(0, 3).map((item, idx) => (
-            <div key={idx} className="flex items-center gap-2 text-xs text-space-text-secondary">
-              <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: semColor.hex }} />
-              <span className="truncate">{item}</span>
-            </div>
-          ))}
+          <div className="space-y-1.5">
+            {semester.highlights?.slice(0, 3).map((item, idx) => (
+              <div key={idx} className="flex items-center gap-2 text-xs text-space-text-secondary" title={item}>
+                <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: semColor.hex }} />
+                <span className="truncate">{item}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Card Footer CTA */}
-        <div className="relative z-10 pt-4 border-t border-white/5 flex items-center justify-between mt-auto" style={{ transform: 'translateZ(25px)' }}>
-          <div className="flex items-center gap-3 text-xs text-space-text-muted font-mono">
-            <span className="flex items-center gap-1">
-              <Layers size={13} className="text-cyan-400" />
+        {/* Card Footer: Dedicated Stats Row + Full-Width Action Button */}
+        <div className="relative z-10 pt-3.5 border-t border-white/5 mt-auto space-y-3" style={{ transform: 'translateZ(25px)' }}>
+          <div className="flex items-center justify-between text-xs text-space-text-muted font-mono px-0.5">
+            <span className="flex items-center gap-1.5">
+              <Layers size={13} className="text-cyan-400 shrink-0" />
               <span>6 Subjects</span>
             </span>
-            <span>•</span>
-            <span>{semester.credits} Credits</span>
+            <span className="text-white/20">•</span>
+            <span className="text-space-text-secondary font-medium">
+              {semester.credits} Credits
+            </span>
           </div>
 
           <Link
             to={`/semester/${semester.id}`}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold text-white bg-white/5 hover:bg-white/10 border border-white/10 group-hover:border-cyan-500/40 transition-all shadow-sm"
+            className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-semibold text-white bg-white/5 hover:bg-white/10 border border-white/10 group-hover:border-cyan-400/40 transition-all shadow-sm active:scale-[0.98]"
           >
             <span>Explore Orbit</span>
-            <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform text-cyan-400" />
           </Link>
         </div>
       </motion.div>

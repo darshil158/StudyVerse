@@ -29,9 +29,12 @@ export function SkeletonSemesterCard() {
         <Skeleton className="w-5/6 h-3" />
         <Skeleton className="w-4/6 h-3" />
       </div>
-      <div className="flex items-center justify-between pt-4 border-t border-white/5">
-        <Skeleton className="w-24 h-4" />
-        <Skeleton className="w-20 h-8" variant="rect" />
+      <div className="space-y-3 pt-3.5 border-t border-white/5 mt-auto">
+        <div className="flex items-center justify-between">
+          <Skeleton className="w-20 h-3.5" />
+          <Skeleton className="w-16 h-3.5" />
+        </div>
+        <Skeleton className="w-full h-9" variant="rect" />
       </div>
     </div>
   );

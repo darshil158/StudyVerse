@@ -16,7 +16,7 @@ export default function PYQCard({ pyq }) {
   };
 
   return (
-    <div className="group rounded-card bg-space-surface1/80 border border-white/10 hover:border-violet-500/30 transition-all duration-300 p-5 shadow-lg flex flex-col justify-between hover:-translate-y-1">
+    <div className="group rounded-card bg-space-surface1/90 border border-white/10 hover:border-violet-500/30 transition-all duration-300 p-5 shadow-lg flex flex-col justify-between hover:-translate-y-1 h-full">
       <div>
         {/* Top Badges */}
         <div className="flex items-center justify-between gap-2 mb-3">
@@ -33,28 +33,28 @@ export default function PYQCard({ pyq }) {
         </div>
 
         {/* Paper Title */}
-        <h4 className="font-display text-base font-bold text-white tracking-tight group-hover:text-violet-200 transition-colors line-clamp-2 mb-2">
+        <h4 className="font-display text-base font-bold text-white tracking-tight group-hover:text-violet-200 transition-colors line-clamp-2 mb-2 min-h-[44px] flex items-center">
           {pyq.title}
         </h4>
 
-        <p className="text-xs text-space-text-secondary leading-relaxed line-clamp-2 mb-4">
+        <p className="text-xs text-space-text-secondary leading-relaxed line-clamp-2 min-h-[34px] mb-3">
           {pyq.description}
         </p>
 
         {/* Exam Specifications */}
         <div className="grid grid-cols-2 gap-2 text-xs font-mono text-space-text-muted mb-4 py-2.5 px-3 rounded-lg bg-space-surface2/50 border border-white/5">
           <div className="flex items-center gap-1.5">
-            <Clock size={12} className="text-cyan-400" />
+            <Clock size={12} className="text-cyan-400 shrink-0" />
             <span>{pyq.duration}</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <Award size={12} className="text-amber-400" />
+            <Award size={12} className="text-amber-400 shrink-0" />
             <span>Max: {pyq.maxMarks} Marks</span>
           </div>
-          <div className="flex items-center gap-1.5 col-span-2">
+          <div className="flex items-center gap-1.5 col-span-2 pt-1 border-t border-white/5">
             {pyq.hasSolution ? (
-              <span className="flex items-center gap-1 text-emerald-400">
-                <CheckCircle size={12} />
+              <span className="flex items-center gap-1.5 text-emerald-400 font-medium">
+                <CheckCircle size={12} className="shrink-0" />
                 <span>Verified Model Solution Attached</span>
               </span>
             ) : (
@@ -65,16 +65,16 @@ export default function PYQCard({ pyq }) {
       </div>
 
       {/* Footer Actions */}
-      <div className="pt-3 border-t border-white/5 flex items-center justify-between mt-auto">
-        <span className="text-xs font-mono text-space-text-muted">
+      <div className="pt-3.5 border-t border-white/5 flex items-center justify-between mt-auto gap-2">
+        <span className="text-xs font-mono text-space-text-muted truncate">
           {pyq.downloads} students practiced
         </span>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 shrink-0">
           <button
             type="button"
             onClick={handleView}
-            className="p-2 rounded-lg text-space-text-secondary hover:text-white bg-space-surface2 hover:bg-space-surface3 border border-white/10 hover:border-violet-500/30 transition-all"
+            className="p-2 rounded-lg text-space-text-secondary hover:text-white bg-space-surface2 hover:bg-space-surface3 border border-white/10 hover:border-violet-500/30 transition-all active:scale-95 shrink-0"
             title="Preview Exam Paper in New Tab"
             aria-label="Preview exam paper"
           >
@@ -84,10 +84,10 @@ export default function PYQCard({ pyq }) {
           <button
             type="button"
             onClick={handleDownload}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 transition-all shadow-md shadow-violet-500/15 active:scale-95"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 transition-all shadow-md shadow-violet-500/15 active:scale-95 whitespace-nowrap shrink-0"
             aria-label="Download question paper"
           >
-            <Download size={14} />
+            <Download size={13} />
             <span>Download Paper</span>
           </button>
         </div>

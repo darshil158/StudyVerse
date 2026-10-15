@@ -42,24 +42,24 @@ export default function SubjectCard({ subject }) {
           </div>
 
           {/* Subject Title */}
-          <Link to={`/subject/${subject.id}`}>
-            <h3 className="font-display text-lg font-bold text-white tracking-tight group-hover:text-cyan-200 transition-colors mb-2 line-clamp-1">
+          <Link to={`/subject/${subject.id}`} className="block group/title">
+            <h3 className="font-display text-base sm:text-lg font-bold text-white tracking-tight group-hover/title:text-cyan-200 transition-colors mb-2 line-clamp-2 min-h-[44px] flex items-center">
               {subject.name}
             </h3>
           </Link>
 
-          <p className="text-xs text-space-text-secondary line-clamp-2 leading-relaxed mb-4">
+          <p className="text-xs text-space-text-secondary line-clamp-2 leading-relaxed min-h-[34px] mb-3">
             {subject.description}
           </p>
 
           {/* Important Topics Preview */}
           {subject.importantTopics?.length > 0 && (
-            <div className="space-y-1.5 mb-4 py-3 border-y border-white/5">
-              <div className="text-[10px] font-mono text-space-text-muted uppercase tracking-wider flex items-center gap-1">
-                <Sparkles size={11} className="text-cyan-400" />
-                <span>High-Yield Topic</span>
+            <div className="rounded-lg bg-space-surface2/60 border border-white/5 p-2.5 mb-4">
+              <div className="text-[10px] font-mono text-cyan-400 uppercase tracking-wider flex items-center gap-1.5 mb-1 font-semibold">
+                <Sparkles size={11} className="text-cyan-400 shrink-0" />
+                <span>High-Yield GTU Topic</span>
               </div>
-              <p className="text-xs text-space-text-primary line-clamp-1 italic">
+              <p className="text-xs text-space-text-primary line-clamp-1 italic font-medium">
                 "{subject.importantTopics[0]}"
               </p>
             </div>
@@ -67,10 +67,10 @@ export default function SubjectCard({ subject }) {
         </div>
 
         {/* Card Footer Details */}
-        <div className="pt-3 flex items-center justify-between mt-auto">
+        <div className="pt-3.5 border-t border-white/5 flex items-center justify-between mt-auto">
           <div className="flex items-center gap-2">
             <span
-              className="text-[11px] font-mono px-2 py-0.5 rounded border"
+              className="text-[11px] font-mono px-2 py-0.5 rounded border font-medium"
               style={{
                 backgroundColor: `${category.color}15`,
                 borderColor: `${category.color}35`,
@@ -86,7 +86,7 @@ export default function SubjectCard({ subject }) {
 
           <Link
             to={`/subject/${subject.id}`}
-            className="inline-flex items-center gap-1 text-xs font-semibold text-cyan-400 group-hover:text-cyan-300 transition-colors"
+            className="inline-flex items-center gap-1 text-xs font-semibold text-cyan-400 hover:text-cyan-300 py-1 px-2.5 rounded-lg hover:bg-white/5 transition-all"
           >
             <span>Details</span>
             <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />

@@ -4,9 +4,9 @@ import { getSemesterColor } from '../../lib/utils.js';
 export default function SemesterOrbitRing({ 
   semNumber = 1, 
   availableCount = 18, 
-  totalPossible = 24, 
-  size = 64,
-  strokeWidth = 3.5,
+  totalPossible = 20, 
+  size = 46,
+  strokeWidth = 3,
   showLabel = true 
 }) {
   const semColor = getSemesterColor(semNumber);
@@ -17,7 +17,11 @@ export default function SemesterOrbitRing({
   const strokeDashoffset = circumference - (percentage / 100) * circumference;
 
   return (
-    <div className="relative inline-flex items-center justify-center" style={{ width: size, height: size }}>
+    <div 
+      className="relative inline-flex items-center justify-center shrink-0" 
+      style={{ width: size, height: size }}
+      title={`Orbit ${semNumber}: ${percentage}% curriculum coverage`}
+    >
       <svg width={size} height={size} className="transform -rotate-90">
         {/* Background orbit track */}
         <circle
@@ -49,12 +53,9 @@ export default function SemesterOrbitRing({
 
       {/* Center Label */}
       {showLabel && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-          <span className="font-mono text-xs font-bold text-white leading-none">
+        <div className="absolute inset-0 flex items-center justify-center text-center">
+          <span className="font-mono text-[11px] font-bold text-white tracking-tighter leading-none">
             {percentage}%
-          </span>
-          <span className="text-[8px] font-mono text-space-text-muted mt-0.5 leading-none">
-            Orbit {semNumber}
           </span>
         </div>
       )}
